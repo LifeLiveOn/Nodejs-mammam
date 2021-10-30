@@ -1,0 +1,28 @@
+{{!-- <h1>Products</h1>
+<form class="row g-3" method="post" action="/reports">
+  <div class="col-auto">
+    <label for="inputPassword2" class="visually-hidden">Password</label>
+    <input type="password" name="password" class="form-control" id="inputPassword2" placeholder="Password">
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+  </div>
+</form> --}}
+<div class="container">
+  <div class="row">
+    {{#each Products }}
+      <div class="col-4"  style= "padding:5%">
+        <div class="card" style="width: 18rem;">
+          <a href="/products/{{this.slug}}"> 
+            <img src="/{{this.image}}" class="card-img-top" alt="...">
+          </a>
+              <div class="card-body">
+                <h5 class="card-title">{{this.product_name}}</h5>
+                <p class="card-text">{{this.description}}</p>
+                <a href="/products/{{this.slug}}" class="btn btn-primary">View detail</a>
+              </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
